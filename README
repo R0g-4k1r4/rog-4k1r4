@@ -1,0 +1,29 @@
+Projeto: Consumo mensal de energia ⚡💡.
+Objetivo: Medir o consumo mensal de aparelhos eletricos e eletronicos.
+Linguagem utilizada: Python.
+Instruções para utilização: Coloque o nome do aparelho utilizado e seguia as instruções do programa para obter o resultado.
+
+ --- Programa de Cálculo de Consumo de Energia ---
+
+# Entrada de dados
+nome_aparelho = input("Digite o nome do aparelho (ex: Geladeira): ")
+potencia = float(input(f"Digite a potência do {nome_aparelho} em Watts (W): "))
+horas_dia = float(input(f"Quantas horas por dia o(a) {nome_aparelho} fica ligado(a)? "))
+
+# Definições de cálculo
+DIAS_MES = 30
+PRECO_KWH = 0.75  # Valor estimado por kWh em Reais
+
+# Cálculo do consumo mensal em kWh
+# Fórmula: (Potência * Horas * Dias) / 1000
+consumo_mensal = (potencia * horas_dia * DIAS_MES) / 1000
+
+# Cálculo do custo estimado
+custo_estimado = consumo_mensal * PRECO_KWH
+
+# Exibição dos resultados
+print("-" * 30)
+print(f"Aparelho: {nome_aparelho}")
+print(f"Consumo estimado: {consumo_mensal:.2f} kWh/mês")
+print(f"Custo estimado: R$ {custo_estimado:.2f}")
+print("-" * 30)
